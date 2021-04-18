@@ -10,28 +10,29 @@ class _CallToActionState extends State<CallToAction> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      // width: 600,
-      // color: Colors.grey,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Center(
-            child: Container(
-              width: 300,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  MyStyle().showSizebox(8, 48),
-                  MyStyle().titleH2('For Member'),
-                  MyStyle().showSizebox(8, 16),
-                  buildUser(),
-                  MyStyle().showSizebox(8, 16),
-                  buildPassword(),
-                ],
+      
+      child: Container(color: Colors.grey,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Center(
+              child: Container(
+                width: 300,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    MyStyle().showSizebox(8, 48),
+                    MyStyle().titleH2('For Member'),
+                    MyStyle().showSizebox(8, 16),
+                    buildUser(),
+                    MyStyle().showSizebox(8, 16),
+                    buildPassword(),
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

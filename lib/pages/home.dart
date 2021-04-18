@@ -11,6 +11,17 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  Widget mainBody;
+  GlobalKey globalKey;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    mainBody = buildContent();
+    
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,36 +31,39 @@ class _HomeState extends State<Home> {
           vertical: 30,
           horizontal: 40,
         ),
-        // color: Colors.grey,
-        // height: 500,
         child: ConstrainedBox(
           constraints: BoxConstraints(maxWidth: 1200),
           child: Column(
             children: [
               NavigationBar(),
-              Expanded(
-                  child: ScreenTypeLayout(
-                mobile: Column(
-                  children: [
-                    CallToAction(),
-                    Content(),
-                  ],
-                ),
-                tablet: Column(
-                  children: [
-                    CallToAction(),
-                    Content(),
-                  ],
-                ),
-                desktop: Row(
-                  children: [
-                    Content(),
-                    CallToAction(),
-                  ],
-                ),
-              )),
+              mainBody,
             ],
           ),
+        ),
+      ),
+    );
+  }
+
+  Expanded buildContent() {
+    return Expanded(
+      child: ScreenTypeLayout(
+        mobile: Column(
+          children: [
+            CallToAction(),
+            Content(),
+          ],
+        ),
+        tablet: Column(
+          children: [
+            CallToAction(),
+            Content(),
+          ],
+        ),
+        desktop: Row(
+          children: [
+            Content(),
+            CallToAction(),
+          ],
         ),
       ),
     );

@@ -11,7 +11,7 @@ class _ContentState extends State<Content> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // color: Colors.grey,
+      color: Colors.grey.shade300,
       width: 600,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
